@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "267475565135",
+    "project_id": "hhs-album",
+    "storage_bucket": "hhs-album.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267475565135:android:62b9d763fa1cd6a2ca083a",
+        "android_client_info": {
+          "package_name": "com.example.hhs_album"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClz90ll-gicioyQt9h_eVyfGX_fDo8E-s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
