@@ -2,17 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
-// 🔥 새로 만든 화면 파일들을 불러옵니다.
-import 'screens/login_screen.dart';
-import 'screens/home_screen.dart';
+import 'screens/login_screen.dart';   // 로그인 화면
+import 'screens/home_screen.dart';   // 캘린더 화면
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseAuth.instance.setSettings(appVerificationDisabledForTesting: true);
-  
   runApp(const MyApp());
 }
 
@@ -22,19 +19,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '가족 앨범',
+      debugShowCheckedModeBanner: false,
+      title: 'ruVibe',
       theme: ThemeData(primarySwatch: Colors.blue),
-      // Auth 상태를 감시해서 화면을 자동으로 스위칭
+      // 🔥 여기서 로그인 상태에 따라 화면을 분기합니다.
       home: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Scaffold(body: Center(child: CircularProgressIndicator()));
-          }
           if (snapshot.hasData) {
-            return const HomeScreen(); // 로그인 상태면 홈화면으로
+            return const HomeScreen(); // 로그인 완료 -> 캘린더 홈화면
           }
-          return const LoginScreen(); // 로그아웃 상태면 로그인화면으로
+          return const LoginScreen(); // 로그인 전 -> 로그인 화면
         },
       ),
     );

@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Hhs Album</string>
+	<string>잘큰다</string> <!--ruVibe-->
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -22,6 +22,17 @@
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>app-1-267475565135-ios-10ed3384e3e1169dca083a</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -66,16 +77,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>app-1-267475565135-ios-10ed3384e3e1169dca083a</string>
-            </array>
-        </dict>
-    </array>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>아기 사진을 기기 갤러리에서 읽고 쓰기 위해 권한이 필요합니다.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>아기 사진을 기기 갤러리에 저장하기 위해 권한이 필요합니다.</string>
 </dict>
 </plist>
